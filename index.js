@@ -89,9 +89,21 @@ const titles = [
 
 //Sort books from oldest to most recent
 
-//sort books alphabetically
+const sortedBooks = books.slice().sort((a, b) => a.publishDate - b.publishDate);
+
+console.log(sortedBooks);
+
+
+
+//alphabetically
+
+
+
 
 //Find who wrote War and Peace
+
+
+  
 
 //how many books were written before 1900?
 
