@@ -100,14 +100,29 @@ console.log(sortedBooks);
 
 
 
-//Find who wrote War and Peace
 
+//Find who wrote War and Peace
 
   
 
 //how many books were written before 1900?
 
+const booksBefore1900 = books.filter((book) => book.publishDate < 1900);
+const count = booksBefore1900.length;
+
+console.log(`The number of books written before 1900 is ${count}`);
+
 //was there at least one book published within the last 100 years?
+
+const currentYear = new Date().getFullYear();
+const hasBookPublishedLast100Years = books.some((book) => currentYear - book.publishDate <= 100);
+
+if (hasBookPublishedLast100Years) {
+  console.log("Yes");
+} else {
+  console.log("No,");
+}
+
 
 //was every book published within the last 100 years?
 
