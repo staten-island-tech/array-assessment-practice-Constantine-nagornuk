@@ -91,7 +91,7 @@ const titles = [
 
 const sortedBooks = books.slice().sort((a, b) => a.publishDate - b.publishDate);
 
-console.log(sortedBooks);
+console.log(sortedBooks)
 
 
 
@@ -123,7 +123,15 @@ if (hasBookPublishedLast100Years) {
   console.log("No,");
 }
 
-
+  
 //was every book published within the last 100 years?
+
+const every = books.every((book) => currentYear - book.publishDate <= 100)
+if (every){
+  console.log('Yes evey book was made within the last 100 years')
+} else {
+  console.log('no')
+}
+
 
 //print a list of books that "includes" the genre historical
