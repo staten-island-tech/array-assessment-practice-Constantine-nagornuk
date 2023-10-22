@@ -96,14 +96,16 @@ console.log(sortedBooks)
 
 
 //alphabetically
-
+  
 
 
 
 
 //Find who wrote War and Peace
 
-  
+ const poop =  books.find((book) => book.name === 'War and Peace')
+console.log(poop.authorFirst , poop.authorLast)
+
 
 //how many books were written before 1900?
 
@@ -135,3 +137,7 @@ if (every){
 
 
 //print a list of books that "includes" the genre historical
+
+const hisotrical = books.filter((book) => book.genre.includes("historical"))
+
+console.log(hisotrical)
