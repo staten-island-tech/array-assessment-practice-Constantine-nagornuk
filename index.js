@@ -96,7 +96,7 @@ console.log(sortedBooks)
 
 
 //alphabetically
-  
+
 
 
 
@@ -141,3 +141,66 @@ if (every){
 const hisotrical = books.filter((book) => book.genre.includes("historical"))
 
 console.log(hisotrical)
+
+
+const fictional = books.filter((book) => book.genre.includes("fiction"))
+console.log(fictional)
+
+//--------------------------------------
+let maxgenre = 0
+bookmax = []
+const long = books.forEach((book) => {
+const genres = book.genre.length
+
+if (genres > maxgenre){
+  maxgenre = genres
+  bookmax.push(book.name)
+}
+})
+
+console.log(bookmax)
+
+//-----------------------------Calculate the average publication year for all the books.
+years = []
+dates = books.forEach((book) => {
+  years.push(book.publishDate)
+})
+
+const total = years.reduce((a,b) => a+b)
+
+numbers = years.length
+
+
+const avg = total / numbers
+console.log(`the avg publication year for all the books is ${avg}`)
+
+//List all books published in the 20th century (1900-1999).
+
+a = books.filter((book)=> book.publishDate <= 1999 && book.publishDate >= 1900 )
+a.forEach((book) => console.log(book.name))
+
+//Find all books with a single-word title.
+
+console.log('------')
+
+
+
+books.forEach((book) => {
+  const len = book.name.split(' ');
+  if (len.length === 1) {
+    console.log(book.name);
+  } else {
+    console.log(`This book "${book.name}" does not have one word in the title`);
+  }
+});
+
+
+
+
+/* 
+const p = ['yo there man yo']
+
+const wordsSplit = p[0].split(' ')
+console.log(wordsSplit)
+console.log(wordsSplit)
+ */
